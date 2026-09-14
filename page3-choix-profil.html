@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Worker TSA — Choisir un profil</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+  <div class="page-header">
+    <h1>Comment souhaitez-vous utiliser Worker TSA ?</h1>
+    <p>Choisissez le profil qui correspond à votre besoin.</p>
+  </div>
+
+  <div class="profile-options" role="radiogroup" aria-label="Choix du profil">
+
+    <div class="profile-card" data-profile="client" tabindex="0">
+      <input type="radio" name="profile" value="client" id="profileClient">
+      <div class="profile-icon">👤</div>
+      <div class="profile-body">
+        <h3>Client</h3>
+        <p>Recherchez et choisissez des services proposés sur Worker TSA.</p>
+        <span class="badge-free">🎁 Accès gratuit</span>
+      </div>
+      <span class="radio-dot"></span>
+    </div>
+
+    <div class="profile-card" data-profile="prestataire" tabindex="0">
+      <input type="radio" name="profile" value="prestataire" id="profilePrestataire">
+      <div class="profile-icon">🛠️</div>
+      <div class="profile-body">
+        <h3>Prestataire de services</h3>
+        <p>Proposez vos services, gérez votre activité.</p>
+      </div>
+      <span class="radio-dot"></span>
+    </div>
+
+  </div>
+
+  <button type="button" class="btn-primary" id="continueProfileBtn" disabled style="width:100%;">
+    Continuer <span class="arrow">→</span>
+  </button>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

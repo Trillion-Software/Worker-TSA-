@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Worker TSA</title>
+  <link rel="icon" href="splash-bg.png">
+  <style>
+    :root {
+      --rouge: #E31E24;
+      --rouge-fonce: #B3151A;
+      --blanc: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .splash {
+      position: relative;
+      height: 100dvh;
+      width: 100%;
+      background-image: url("splash-bg.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .splash::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 25%);
+      pointer-events: none;
+    }
+
+    .loader-zone {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      padding-bottom: 9vh;
+    }
+
+    .dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .dots span {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--blanc);
+      opacity: 0.35;
+      animation: pulse 1.1s ease-in-out infinite;
+    }
+
+    .dots span:nth-child(1) { animation-delay: 0s; }
+    .dots span:nth-child(2) { animation-delay: 0.15s; background: var(--rouge); }
+    .dots span:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes pulse {
+      0%, 60%, 100% { opacity: 0.35; transform: scale(1); }
+      30% { opacity: 1; transform: scale(1.25); }
+    }
+
+    .credit {
+      position: relative;
+      z-index: 2;
+      color: rgba(255,255,255,0.85);
+      font-size: 12px;
+      letter-spacing: 0.3px;
+      padding-bottom: 22px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .credit strong {
+      color: var(--blanc);
+      font-weight: 700;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .dots span { animation: none; opacity: 0.8; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="splash">
+    <div class="loader-zone">
+      <div class="dots" role="status" aria-label="Chargement de l'application">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="credit">Created by <strong>Trillion Software</strong></div>
+  </div>
+
+  <script>
+    // Redirection automatique vers la page suivante (page 2) après le splash.
+    // Le nom du fichier de destination sera ajusté quand la page 2 sera prête.
+    setTimeout(function () {
+      // window.location.href = "page2.html";
+    }, 2500);
+  </script>
+
+</body>
+</html>

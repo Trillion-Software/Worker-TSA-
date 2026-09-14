@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Worker TSA — Connexion</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="auth-screen" style="background-image: url('auth-bg.jpg');">
+  <div class="auth-overlay"></div>
+
+  <div class="auth-content">
+    <div class="brand">
+      <img src="logo.png" alt="Worker TSA" class="brand-logo">
+      <h1 class="brand-name"><span class="w">Worker</span><span class="r">TSA</span></h1>
+      <div class="brand-underline"></div>
+    </div>
+
+    <div class="auth-card">
+      <h2 class="auth-title">Connexion</h2>
+      <p class="auth-subtitle">Connectez-vous à votre compte pour continuer</p>
+
+      <form id="loginForm" class="auth-form" novalidate>
+        <div class="field">
+          <span class="field-icon">✉</span>
+          <input type="email" id="email" name="email" placeholder="Adresse e-mail" required autocomplete="email">
+        </div>
+
+        <div class="field">
+          <span class="field-icon">🔒</span>
+          <input type="password" id="password" name="password" placeholder="Mot de passe" required autocomplete="current-password">
+          <button type="button" class="field-toggle" id="togglePassword" aria-label="Afficher le mot de passe">👁</button>
+        </div>
+
+        <div class="field-row">
+          <label class="checkbox">
+            <input type="checkbox" id="remember" name="remember">
+            <span class="checkbox-box"></span>
+            Se souvenir de moi
+          </label>
+          <a href="mot-de-passe-oublie.html" class="link-inline">Mot de passe oublié ?</a>
+        </div>
+
+        <button type="submit" class="btn-primary">Se connecter <span class="arrow">→</span></button>
+
+        <div class="divider"><span>OU</span></div>
+
+        <button type="button" class="btn-outline" id="otherEmailBtn">
+          <span class="field-icon">✉</span> Continuer avec un autre compte e-mail
+        </button>
+      </form>
+
+      <p class="auth-footer">
+        Vous n'avez pas de compte ?
+        <a href="page3-choix-profil.html" class="link-strong">Créer un compte <span class="arrow">→</span></a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

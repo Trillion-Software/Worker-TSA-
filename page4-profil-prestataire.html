@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Worker TSA — Créer votre profil prestataire</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+
+  <div class="form-intro">
+    <div class="form-intro-icon">👤</div>
+    <div>
+      <h2>Créer votre profil prestataire</h2>
+      <p>Renseignez les informations ci-dessous pour publier votre profil et proposer vos services.</p>
+    </div>
+  </div>
+
+  <form id="prestataireForm" novalidate>
+
+    <!-- Photo de profil -->
+    <div class="form-section">
+      <div class="form-section-label">
+        <span class="form-section-icon">📷</span>
+        <h4>Photo de profil</h4>
+      </div>
+      <p class="form-section-hint">Ajoutez une photo claire et professionnelle. Format recommandé : 500x500 (JPG, PNG).</p>
+      <label class="upload-box" data-upload for="photoProfil">
+        <div class="upload-icon">📷</div>
+        <strong>Ajouter une photo</strong>
+        <small>Cliquez pour sélectionner</small>
+        <input type="file" id="photoProfil" name="photoProfil" accept="image/*" hidden>
+      </label>
+    </div>
+
+    <!-- Photos d'activité -->
+    <div class="form-section">
+      <div class="form-section-label">
+        <span class="form-section-icon">🖼️</span>
+        <h4>Photos de votre activité</h4>
+      </div>
+      <p class="form-section-hint">Ajoutez jusqu'à 3 photos de votre activité pour montrer la qualité de votre travail.</p>
+      <div class="photo-grid">
+        <label class="photo-slot" data-upload for="photoActivite1">
+          <span class="plus-icon">🖼️➕</span>
+          <span>Photo 1</span>
+          <input type="file" id="photoActivite1" name="photoActivite1" accept="image/*" hidden>
+        </label>
+        <label class="photo-slot" data-upload for="photoActivite2">
+          <span class="plus-icon">🖼️➕</span>
+          <span>Photo 2</span>
+          <input type="file" id="photoActivite2" name="photoActivite2" accept="image/*" hidden>
+        </label>
+        <label class="photo-slot" data-upload for="photoActivite3">
+          <span class="plus-icon">🖼️➕</span>
+          <span>Photo 3</span>
+          <input type="file" id="photoActivite3" name="photoActivite3" accept="image/*" hidden>
+        </label>
+      </div>
+    </div>
+
+    <!-- Domaine d'activité -->
+    <div class="form-section">
+      <div class="form-section-label">
+        <span class="form-section-icon">💼</span>
+        <h4>Domaine d'activité <span class="req">*</span></h4>
+      </div>
+      <div class="field field-select">
+        <select id="domaineActivite" name="domaineActivite" required>
+          <option value="" selected disabled>Sélectionnez votre domaine</option>
+          <option value="batiment">Bâtiment &amp; Construction</option>
+          <option value="electricite">Électricité</option>
+          <option value="plomberie">Plomberie</option>
+          <option value="menage">Ménage &amp; Entretien</option>
+          <option value="beaute">Beauté &amp; Bien-être</option>
+          <option value="informatique">Informatique &amp; Réparation</option>
+          <option value="transport">Transport &amp; Livraison</option>
+          <option value="autre">Autre</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Spécialité -->
+    <div class="form-section">
+      <div class="form-section-label">
+        <span class="form-section-icon">⚙️</span>
+        <h4>Spécialité / Service proposé <span class="req">*</span></h4>
+      </div>
+      <div class="field">
+        <input type="text" id="specialite" name="specialite" placeholder="Ex : Installation électrique, Plomberie, …" required>
+      </div>
+    </div>
+
+    <!-- Téléphone -->
+    <div class="form-section">
+      <div class="form-section-label">
+        <span class="form-section-icon">📞</span>
+        <h4>Téléphone <span class="req">*</span></h4>
+      </div>
+      <div class="field">
+        <input type="tel" id="telephone" name="telephone" placeholder="Ex : +228 90 12 34 56" required>
+      </div>
+    </div>
+
+    <!-- WhatsApp -->
+    <div class="form-section">
+      <div class="form-section-label">
+        <span class="form-section-icon">💬</span>
+        <h4>WhatsApp <span class="req">*</span></h4>
+      </div>
+      <div class="field">
+        <input type="tel" id="whatsapp" name="whatsapp" placeholder="Ex : +228 90 12 34 56" required>
+      </div>
+    </div>
+
+    <!-- Région -->
+    <div class="form-section">
+      <div class="form-section-label">
+        <span class="form-section-icon">📍</span>
+        <h4>Région <span class="req">*</span></h4>
+      </div>
+      <div class="field field-select">
+        <select id="region" name="region" required>
+          <option value="" selected disabled>Sélectionnez votre région</option>
+          <option value="maritime">Maritime</option>
+          <option value="plateaux">Plateaux</option>
+          <option value="centrale">Centrale</option>
+          <option value="kara">Kara</option>
+          <option value="savanes">Savanes</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Ville / Commune -->
+    <div class="form-section">
+      <div class="form-section-label">
+        <span class="form-section-icon">📍</span>
+        <h4>Ville / Commune <span class="req">*</span></h4>
+      </div>
+      <div class="field field-select">
+        <select id="ville" name="ville" required>
+          <option value="" selected disabled>Sélectionnez votre ville</option>
+          <option value="lome">Lomé</option>
+          <option value="sokode">Sokodé</option>
+          <option value="kara">Kara</option>
+          <option value="kpalime">Kpalimé</option>
+          <option value="atakpame">Atakpamé</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Informations importantes -->
+    <div class="form-section">
+      <div class="form-section-label">
+        <span class="form-section-icon">📄</span>
+        <h4>Informations importantes</h4>
+      </div>
+      <div class="field field-textarea">
+        <textarea id="infosImportantes" name="infosImportantes" maxlength="500" placeholder="Décrivez brièvement vos services, vos compétences et ce qui vous rend unique…"></textarea>
+      </div>
+      <div class="char-count" data-count-for="infosImportantes">0/500</div>
+    </div>
+
+    <!-- Annonces -->
+    <div class="form-section">
+      <div class="form-section-label">
+        <span class="form-section-icon">📢</span>
+        <h4>Annonces</h4>
+      </div>
+      <div class="field field-textarea">
+        <textarea id="annonces" name="annonces" maxlength="800" placeholder="Ajoutez une ou plusieurs annonces pour attirer vos clients…"></textarea>
+      </div>
+      <div class="char-count" data-count-for="annonces">0/800</div>
+    </div>
+
+    <!-- Documents -->
+    <div class="form-section">
+      <div class="form-section-label">
+        <span class="form-section-icon">📄</span>
+        <h4>Documents (à fournir)</h4>
+      </div>
+      <p class="form-section-hint">Téléchargez votre CNI (recto + verso) ou un document prouvant l'existence de votre entreprise.</p>
+      <label class="upload-box" data-upload for="documents">
+        <div class="upload-icon">🪪</div>
+        <strong>Télécharger vos documents</strong>
+        <small>CNI recto + verso ou document entreprise<br>Cliquez pour sélectionner</small>
+        <input type="file" id="documents" name="documents" accept="image/*,application/pdf" multiple hidden>
+      </label>
+    </div>
+
+    <div class="sticky-submit">
+      <button type="submit" class="btn-primary" style="width:100%;">
+        Enregistrer et continuer <span class="arrow">→</span>
+      </button>
+    </div>
+
+  </form>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
